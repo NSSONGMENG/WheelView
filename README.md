@@ -17,11 +17,11 @@ ios 轮播图
 <pre><code>
 - (FXWheellV *)wheelV
 {
-if (!_wheelV) {
-_wheelV = [[FXWheellV alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 84)];
-_wheelV.items = @[@"wheel_img0",@"wheel_img0",@"wheel_img0",@"wheel_img0",@"wheel_img0"];
-}
-return _wheelV;
+    if (!_wheelV) {
+        _wheelV = [[FXWheellV alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 84)];
+        _wheelV.items = @[@"wheel_img0",@"wheel_img1",@"wheel_img2",@"wheel_img3",@"wheel_img4"];
+    }
+    return _wheelV;
 }
 </code></pre>
 
