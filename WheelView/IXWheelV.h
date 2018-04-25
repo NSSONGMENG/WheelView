@@ -11,7 +11,7 @@
 /** 轮播图 */
 @interface IXWheelV : UIView
 
-/** 切换每一页的时间间隔 */
+/** 切换每一页的时间间隔，默认5s */
 @property (nonatomic, assign) CGFloat   timeSpace;
 /** 图片url／name */
 @property (nonatomic, strong) NSArray   * items;

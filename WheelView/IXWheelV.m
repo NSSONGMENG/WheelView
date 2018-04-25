@@ -217,7 +217,7 @@ UICollectionViewDataSource
         _pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.bounds.size.height - 15,
                                                                        self.bounds.size.width,
                                                                        10)];
-        _pageControl.pageIndicatorTintColor = [UIColor whiteColor];
+        _pageControl.pageIndicatorTintColor = [UIColor yellowColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
     }
     return _pageControl;
@@ -250,7 +250,6 @@ UICollectionViewDataSource
         _imgV = [[UIImageView alloc] initWithFrame:self.bounds];
         _imgV.contentMode = UIViewContentModeScaleAspectFill;
         _imgV.clipsToBounds = YES;
-        _imgV.backgroundColor = [UIColor lightGrayColor];
         [self.contentView addSubview:_imgV];
     }
     return self;
@@ -261,7 +260,9 @@ UICollectionViewDataSource
     _imgPath = imgPath;
     
     if ([imgPath containsString:@"http"]) {
-        [_imgV sd_setImageWithURL:[NSURL URLWithString:imgPath] placeholderImage:nil];
+        [_imgV sd_setImageWithURL:[NSURL URLWithString:imgPath] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
+            NSLog(@"xx");
+        }];
     } else {
         _imgV.image = [UIImage imageNamed:imgPath];
     }

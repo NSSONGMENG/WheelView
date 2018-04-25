@@ -14,6 +14,10 @@
 		14510E6E209074A600C04CFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14510E6C209074A600C04CFF /* LaunchScreen.storyboard */; };
 		14510E71209074A600C04CFF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14510E70209074A600C04CFF /* main.m */; };
 		14510E792090763200C04CFF /* IXWheelV.m in Sources */ = {isa = PBXBuildFile; fileRef = 14510E782090763100C04CFF /* IXWheelV.m */; };
+		14510E8720907E7000C04CFF /* 00.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14510E8320907E7000C04CFF /* 00.jpg */; };
+		14510E8820907E7000C04CFF /* 02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14510E8420907E7000C04CFF /* 02.jpg */; };
+		14510E8920907E7000C04CFF /* 01.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14510E8520907E7000C04CFF /* 01.jpg */; };
+		14510E8A20907E7000C04CFF /* 03.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14510E8620907E7000C04CFF /* 03.jpg */; };
 		FCDCF51490C1468B2B2D8701 /* libPods-WheelViewDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FDE1A9497E1EAC614D25484B /* libPods-WheelViewDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +34,10 @@
 		14510E70209074A600C04CFF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		14510E772090763100C04CFF /* IXWheelV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IXWheelV.h; path = WheelView/IXWheelV.h; sourceTree = SOURCE_ROOT; };
 		14510E782090763100C04CFF /* IXWheelV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IXWheelV.m; path = WheelView/IXWheelV.m; sourceTree = SOURCE_ROOT; };
+		14510E8320907E7000C04CFF /* 00.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 00.jpg; sourceTree = "<group>"; };
+		14510E8420907E7000C04CFF /* 02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpg; sourceTree = "<group>"; };
+		14510E8520907E7000C04CFF /* 01.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpg; sourceTree = "<group>"; };
+		14510E8620907E7000C04CFF /* 03.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpg; sourceTree = "<group>"; };
 		19206DB8CE9AA3F6AF2559B8 /* Pods-WheelViewDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelViewDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-WheelViewDemo/Pods-WheelViewDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D6430BF601A07A47A527825A /* Pods-WheelViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WheelViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WheelViewDemo/Pods-WheelViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		FDE1A9497E1EAC614D25484B /* libPods-WheelViewDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WheelViewDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +82,7 @@
 				14510E65209074A600C04CFF /* ViewController.m */,
 				14510E772090763100C04CFF /* IXWheelV.h */,
 				14510E782090763100C04CFF /* IXWheelV.m */,
+				14510E7A20907B5000C04CFF /* imgs */,
 				14510E67209074A600C04CFF /* Main.storyboard */,
 				14510E6A209074A600C04CFF /* Assets.xcassets */,
 				14510E6C209074A600C04CFF /* LaunchScreen.storyboard */,
@@ -81,6 +90,17 @@
 				14510E70209074A600C04CFF /* main.m */,
 			);
 			path = WheelViewDemo;
+			sourceTree = "<group>";
+		};
+		14510E7A20907B5000C04CFF /* imgs */ = {
+			isa = PBXGroup;
+			children = (
+				14510E8320907E7000C04CFF /* 00.jpg */,
+				14510E8520907E7000C04CFF /* 01.jpg */,
+				14510E8420907E7000C04CFF /* 02.jpg */,
+				14510E8620907E7000C04CFF /* 03.jpg */,
+			);
+			path = imgs;
 			sourceTree = "<group>";
 		};
 		A69AD20338FB9518495B038A /* Frameworks */ = {
@@ -161,7 +181,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14510E8A20907E7000C04CFF /* 03.jpg in Resources */,
+				14510E8820907E7000C04CFF /* 02.jpg in Resources */,
 				14510E6E209074A600C04CFF /* LaunchScreen.storyboard in Resources */,
+				14510E8920907E7000C04CFF /* 01.jpg in Resources */,
+				14510E8720907E7000C04CFF /* 00.jpg in Resources */,
 				14510E6B209074A600C04CFF /* Assets.xcassets in Resources */,
 				14510E69209074A600C04CFF /* Main.storyboard in Resources */,
 			);
