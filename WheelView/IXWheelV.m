@@ -22,6 +22,7 @@ UICollectionViewDataSource
 @property (nonatomic, strong) UIPageControl * pageControl;
 @property (nonatomic, strong) NSMutableArray    * operationArr;
 @property (nonatomic, strong) NSArray   * oriItems;
+@property (nonatomic, assign) BOOL  stoped;
 
 @end
 
@@ -29,12 +30,14 @@ UICollectionViewDataSource
 
 - (void)dealloc
 {
+    NSLog(@" -- %s --",__func__);
     [_wheelTimer invalidate];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
+        _stoped = NO;
         [self addSubview:self.collectionV];
         [self addSubview:self.pageControl];
         self.collectionV.contentOffset = CGPointMake(frame.size.width, 0);
@@ -59,6 +62,26 @@ UICollectionViewDataSource
         _items = [items copy];
         [self.collectionV reloadData];
     }
+}
+
+- (void)stop
+{
+    _stoped = YES;
+    if (_wheelTimer) {
+        [_wheelTimer timeInterval];
+        [_wheelTimer invalidate];
+        _wheelTimer = nil;
+    }
+    
+    for (NSInvocationOperation * op in self.operationArr) {
+        [op cancel];
+    }
+    [self.operationArr removeAllObjects];
+}
+- (void)start
+{
+    _stoped = NO;
+    [self fireTimer];
 }
 
 - (void)setTimeSpace:(CGFloat)timeSpace
@@ -209,6 +232,9 @@ UICollectionViewDataSource
 - (NSTimer *)wheelTimer
 {
     if (!_wheelTimer) {
+        if (_stoped) {
+            return nil;
+        }
         _wheelTimer = [NSTimer scheduledTimerWithTimeInterval:_timeSpace
                                                        target:self
                                                      selector:@selector(changePage)

@@ -19,6 +19,8 @@
 /** 图片url／name */
 @property (nonatomic, strong) NSArray   * items;
 
+- (void)stop;
+- (void)start;
 
 @end
 

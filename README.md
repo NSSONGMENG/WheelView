@@ -28,5 +28,8 @@ wheelV.items = @[@"00.jpg",@"01.jpg",@"02.jpg",@"03.jpg"];
 wheelV.selectBlk = ^(NSInteger idx) {
     NSLog(@"选中item索引 ： %ld",idx);
 };
+
+//页面退出时终止timer，避免释放不掉
+[_wheelV stop];
 ```
 
