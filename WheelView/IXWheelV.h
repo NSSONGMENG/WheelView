@@ -1,5 +1,5 @@
 //
-//  SevenWheelV.h
+//  IXWheelV.h
 //  FXApp
 //
 //  Created by Seven on 2017/7/17.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 /** 轮播图 */
-@interface SevenWheelV : UIView
+@interface IXWheelV : UIView
 
 /** 切换每一页的时间间隔 */
 @property (nonatomic, assign) CGFloat   timeSpace;

@@ -1,17 +1,17 @@
 //
-//  SevenWheelV.m
+//  IXWheelV.m
 //  FXApp
 //
 //  Created by Seven on 2017/7/17.
 //  Copyright © 2017年 wsz. All rights reserved.
 //
 
-#import "SevenWheelV.h"
+#import "IXWheelV.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 static  NSString    * cellIdent = @"collection_cell";
 
-@interface SevenWheelV ()
+@interface IXWheelV ()
 <
 UICollectionViewDelegate,
 UICollectionViewDataSource
@@ -24,7 +24,7 @@ UICollectionViewDataSource
 
 @end
 
-@implementation SevenWheelV
+@implementation IXWheelV
 
 - (void)dealloc
 {
