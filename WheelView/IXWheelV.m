@@ -7,7 +7,7 @@
 //
 
 #import "IXWheelV.h"
-#import <SDWebImage/UIImageView+WebCache.h>
+#import "UIImageView+AFNetworking.h"
 
 static  NSString    * cellIdent = @"collection_cell";
 
@@ -260,9 +260,13 @@ UICollectionViewDataSource
     _imgPath = imgPath;
     
     if ([imgPath containsString:@"http"]) {
-        [_imgV sd_setImageWithURL:[NSURL URLWithString:imgPath] placeholderImage:nil completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-            NSLog(@"xx");
-        }];
+        [_imgV setImageWithURL:[NSURL URLWithString:imgPath] placeholderImage:nil];
+//        NSURLRequest * req  = [NSURLRequest requestWithURL:[NSURL URLWithString:imgPath]];
+//        [_imgV setImageWithURLRequest:req placeholderImage:nil success:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, UIImage * _Nonnull image) {
+//            NSLog(@"-- ");
+//        } failure:^(NSURLRequest * _Nonnull request, NSHTTPURLResponse * _Nullable response, NSError * _Nonnull error) {
+//            NSLog(@" -- ");
+//        }];
     } else {
         _imgV.image = [UIImage imageNamed:imgPath];
     }
