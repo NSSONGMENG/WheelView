@@ -21,13 +21,12 @@
 使用方法
 ----------------------
 <pre><code>
-- (FXWheellV *)wheelV
-{
-    if (!_wheelV) {
-        _wheelV = [[FXWheellV alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 84)];
-        _wheelV.items = @[@"wheel_img0",@"wheel_img1",@"wheel_img2",@"wheel_img3",@"wheel_img4"];
-    }
-    return _wheelV;
-}
+IXWheelV    * wheelV = [[IXWheelV alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 200)];
+wheelV.items = @[@"00.jpg",@"01.jpg",@"02.jpg",@"03.jpg"];
+[self.view addSubview:wheelV];
+
+wheelV.selectBlk = ^(NSInteger idx) {
+NSLog(@"选中item索引 ： %ld",idx);
+};
 </code></pre>
 

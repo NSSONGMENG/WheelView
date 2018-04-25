@@ -21,6 +21,7 @@ UICollectionViewDataSource
 @property (nonatomic, strong) NSTimer   * wheelTimer;
 @property (nonatomic, strong) UIPageControl * pageControl;
 @property (nonatomic, strong) NSMutableArray    * operationArr;
+@property (nonatomic, strong) NSArray   * oriItems;
 
 @end
 
@@ -44,6 +45,7 @@ UICollectionViewDataSource
 
 - (void)setItems:(NSArray *)items
 {
+    _oriItems = [items copy];
     if (items.count > 1) {
         NSMutableArray  * arr = [items mutableCopy];
         [arr addObject:[[items firstObject] copy]];
@@ -112,7 +114,7 @@ UICollectionViewDataSource
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
                   cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    SevenWheelCell    * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdent
+    IXWheelCell    * cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdent
                                                                                forIndexPath:indexPath];
     
     cell.imgPath = self.items[indexPath.row];
@@ -123,6 +125,11 @@ UICollectionViewDataSource
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //点击处理
+    IXWheelCell    * cell = (IXWheelCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    
+    if (self.selectBlk) {
+        self.selectBlk([_oriItems indexOfObject:cell.imgPath]);
+    }
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView
@@ -194,7 +201,7 @@ UICollectionViewDataSource
         _collectionV.pagingEnabled = YES;
         _collectionV.bounces = NO;
         _collectionV.showsHorizontalScrollIndicator = NO;
-        [_collectionV registerClass:[SevenWheelCell class] forCellWithReuseIdentifier:cellIdent];
+        [_collectionV registerClass:[IXWheelCell class] forCellWithReuseIdentifier:cellIdent];
     }
     return _collectionV;
 }
@@ -234,13 +241,13 @@ UICollectionViewDataSource
 @end
 
 
-@interface SevenWheelCell ()
+@interface IXWheelCell ()
 
 @property (nonatomic, strong) UIImageView   * imgV;
 
 @end
 
-@implementation SevenWheelCell
+@implementation IXWheelCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

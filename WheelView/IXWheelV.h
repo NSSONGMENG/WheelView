@@ -11,6 +11,9 @@
 /** 轮播图 */
 @interface IXWheelV : UIView
 
+/** 点击回调 */
+@property (nonatomic, copy) void (^selectBlk)(NSInteger idx);
+
 /** 切换每一页的时间间隔，默认5s */
 @property (nonatomic, assign) CGFloat   timeSpace;
 /** 图片url／name */
@@ -19,7 +22,7 @@
 
 @end
 
-@interface SevenWheelCell : UICollectionViewCell
+@interface IXWheelCell : UICollectionViewCell
 
 /** image url / image name */
 @property (nonatomic, copy) NSString    * imgPath;
