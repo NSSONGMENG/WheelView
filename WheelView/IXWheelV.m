@@ -31,7 +31,6 @@ UICollectionViewDataSource
 - (void)dealloc
 {
     NSLog(@" -- %s --",__func__);
-    [_wheelTimer invalidate];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -72,16 +71,11 @@ UICollectionViewDataSource
         [_wheelTimer invalidate];
         _wheelTimer = nil;
     }
-    
+
     for (NSInvocationOperation * op in self.operationArr) {
         [op cancel];
     }
     [self.operationArr removeAllObjects];
-}
-- (void)start
-{
-    _stoped = NO;
-    [self fireTimer];
 }
 
 - (void)setTimeSpace:(CGFloat)timeSpace
